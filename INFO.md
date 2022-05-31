@@ -1,3 +1,10 @@
+# Build and run container
+- docker-compose up -d --build
+# Run container
+- docker-compose up
+# Server will be start on
+- http://localhost:8080/
+
 # Show all started containers 
 - docker ps
 # Show all containers
@@ -7,7 +14,7 @@
 # Delete all containers
 - docker rm $(docker ps -a -q)
 
-# Build and run container
-- docker-compose up -d --build
-# Run container
-- docker-compose up
+# Open php bash
+- docker exec -it php74-container bash
+# Install symfony 
+- composer create-project symfony/skeleton .
