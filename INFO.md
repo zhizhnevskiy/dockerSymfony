@@ -5,7 +5,6 @@
 # Server will be start on
 - http://localhost:8080/
 
-
 # Show all started containers 
 - docker ps
 # Show all containers
@@ -36,3 +35,10 @@ composer require encore
 - docker-compose run --rm node-service npm install
 # Start npm dev
 - docker-compose run --rm node-service npm run dev
+
+# For start new project
+- symfony composer require http-client doctrine maker phpunit
+# For phpunit, reset DB after testing
+- composer require --dev dama/doctrine-test-bundle
+# For run phpunit test
+- symfony php bin/phpunit tests/StockTest.php
