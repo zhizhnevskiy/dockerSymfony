@@ -21,11 +21,18 @@
 - docker exec -it php74-container bash
 # Install symfony 
 - composer create-project symfony/skeleton .
+# Add package.json, webpack and other
+composer require encore
 
 # Create DB
-docker-compose run --rm php74-service php bin/console doctrine:database:create
+- docker-compose run --rm php74-service php bin/console doctrine:database:create
 # Open MySQl bash
 - docker exec -it mysql8-container bash
 # Command in mySQL bash
 - mysql -uroot -psecret
-- show database;
+- show databases;
+
+# Install npm
+- docker-compose run --rm node-service npm install
+# Start npm dev
+- docker-compose run --rm node-service npm run dev
